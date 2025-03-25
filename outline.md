@@ -2,27 +2,30 @@
 ## I. Welcome
 * Introduction
 * Contact Information
-## II. Stack or Queue _(pick one)_
+## II. Queue
 * Introduction
-* ...
-* _(replace these lines with headings that you'd use to teach this data structure)_
-* ...
+* FIFO
+* Why use a Queue?
+* How to Make a Queue
+* Adding and Removing Items
 * Efficiency of common operations
 * Example Problem
-* Problem to Solve
-## III. Set or Linked List _(pick one)_
+* Problem to Solve - Pancake Orders
+## III. Set 
 * Introduction
-* ...
-* _(replace these lines with headings that you'd use to teach this data structure)_
-* ...
+* Why use a Set? 
+* Keys
+* Searching and Accessing Values
+* Changing Keys and Values
 * Efficiency of common operations
 * Example Problem
-* Problem to Solve
+* Problem to Solve - Ingredient Lists
 ## IV. Tree
 * Introduction
-* ...
-* _(replace these lines with headings that you'd use to teach this data structure)_
-* ...
+* Why use a tree? 
+* Links
+* Searching a Tree
+* Editing a Tree
 * Efficiency of common operations
 * Example Problem
-* Problem to Solve
+* Problem to Solve - Cereal Brands
