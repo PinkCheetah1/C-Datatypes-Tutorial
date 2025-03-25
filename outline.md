@@ -14,9 +14,10 @@
 ## III. Set 
 * Introduction
 * Why use a Set? 
-* Keys
-* Searching and Accessing Values
-* Changing Keys and Values
+* Hashing
+* Storage
+* Chaining and Open Addressing
+* Using a Set
 * Efficiency of common operations
 * Example Problem
 * Problem to Solve - Ingredient Lists
