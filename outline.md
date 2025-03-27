@@ -15,7 +15,6 @@
 * Introduction
 * Why use a Set? 
 * Hashing
-* Storage
 * Chaining and Open Addressing
 * Using a Set
 * Efficiency of common operations
