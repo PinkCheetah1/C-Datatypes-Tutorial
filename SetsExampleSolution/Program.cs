@@ -32,8 +32,8 @@
     }
 
     public void CerealCount(){
-        int cerealNum = _cereals.Count();
-        Console.WriteLine("There are {cerealNum} cereal(s) in stock! ");
+        int cerealNum = _cereals.Count;
+        Console.WriteLine($"There are {cerealNum} cereal(s) in stock! ");
     }
 
     public void PrintCereals(){
@@ -45,22 +45,24 @@
 }
 
 class Program {
-    CerealStock cerealSet = new CerealStock();
-    cerealSet.Add("Sail'r Crunch");
-    cerealSet.Add("Choco Puffs");
-    cerealSet.Add("Happy O's")
-    cerealSet.Add("Honey Clumps of Oats");
-    cerealSet.Add("Frosted Chips");
-    Console.WriteLine();
+    static void Main(string[] args) {
+        CerealStock cerealSet = new CerealStock();
+        cerealSet.AddCereal("Sail'r Crunch");
+        cerealSet.AddCereal("Choco Puffs");
+        cerealSet.AddCereal("Happy O's");
+        cerealSet.AddCereal("Honey Clumps of Oats");
+        cerealSet.AddCereal("Frosted Chips");
+        Console.WriteLine();
 
-    cerealSet.CerealCount();
-    Console.WriteLine();
+        cerealSet.CerealCount();
+        Console.WriteLine();
 
-    CerealSet.CheckCereal("Honey Clumps of Oats");
-    CerealSet.Remove("Honey Clumps of Oats");
-    CerealSet.CheckCereal("Honey Clumps of Oats");
-    Console.WriteLine();
-    
-    cerealSet.PrintCereals();
-    cerealSet.CerealCount();
+        cerealSet.CheckCereal("Honey Clumps of Oats");
+        cerealSet.RemoveCereal("Honey Clumps of Oats");
+        cerealSet.CheckCereal("Honey Clumps of Oats");
+        Console.WriteLine();
+        
+        cerealSet.PrintCereals();
+        cerealSet.CerealCount();
+    }
 }

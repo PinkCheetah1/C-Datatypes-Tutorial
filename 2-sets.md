@@ -2,7 +2,7 @@
 
 When working with data, numbers can get bit. Large lists can easily exceed thousands or millions of values which can become difficult to sort through and can slow down a machine in no time. Also, while some data sets can allow for duplicates, others need to use unique values only. 
 In cases like these, using sets can be valuable. 
-Even more than that, understanding the concepts behinds sets can unlock worlds of possibilities in using other, more complicated kinds of data structures and allow for larger, quicker programs that sort through data with ease.
+Even more than that, understanding the concepts behind sets can unlock worlds of possibilities in using other, more complicated kinds of data structures and allow for larger, quicker programs that sort through data with ease.
 This tutorial will cover **sets**, a data-organization technique called **hashing**, and the **efficiency** of sets and similar data structures.
 
 ## Why Use a Set?
@@ -14,9 +14,9 @@ Sets can be used when:
 
 ### 1. The data does not need to be kept in order
 Sets are a lot like lists in that they store a collection of values. 
-Sets use **hashing**, a technique that allows numbers to be simplified and put in their own, coorresponding addresses in a chunk of storage. We'll talk more about hashing in a moment, but for now, just know that hashing makes sets possible for large, more complicated data types. 
+Sets use **hashing**, a technique that allows numbers to be simplified and put in their own, corresponding addresses in a chunk of storage. We'll talk more about hashing in a moment, but for now, just know that hashing makes sets possible for large, more complicated data types. 
 For now, imagine we are working with a simple chunk of storage that can hold exactly 8 values. 
-Consider the follwing code: 
+Consider the following code: 
 
 ```csharp
 list<int> myList = new();
@@ -41,7 +41,7 @@ mySet.Add(7);
 ```
 
 The set would order the values in the following way: `_, 1, 2, 3, _, _, 6, 7`
-Notice how, unlike the list, the items are put in numerical order and there are three gaps. The numbers are each put in their corrosponding index (number 1 is in index 1, etc.). This is how a set stores data. 
+Notice how, unlike the list, the items are put in numerical order and there are three gaps. The numbers are each put in their corresponding index (number 1 is in index 1, etc.). This is how a set stores data. 
 The downside to this is that data doesn't stay in the order we add it like it does with a normal list. 
 
 ### 2. Every value is unique
@@ -51,7 +51,7 @@ What would happen if we tried to add 7 again?
 ```csharp
 mySet.Add(7);
 ```
-The slot `7` is already occuppied by the value 7, so there's no space for it. 
+The slot `7` is already occupied by the value 7, so there's no space for it. 
 The good news? Our program is smart enough to not break when this happens, so it simply moves on without changing the set. 
 The bad news? We can only have one instance of 7 in our set. 
 Because of this, we can only have unique values in sets. 
@@ -61,7 +61,7 @@ Because of this, we can only have unique values in sets.
 Let's go back to our list: `6, 2, 3, 1, 7, _, _, _`
 If we wanted to find the number 7 in our list, we would have to go through each number in the list and check to see if it is equal to 7. This would result in an O(n) speed because the program has to go through however many items are in the list every time you have to find something. 
 Now, let's try finding 7 on our set: `_, 1, 2, 3, _, _, 6, 7`
-This one is much faster, because we know that the number `7` will be in spot "7". All we have to do is count up 8 spots and we find our number without having the check any of the others. This is very efficient, and results in an O(n) speed!
+This one is much faster, because we know that the number `7` will be in spot "7". All we have to do is count up 8 spots and we find our number without having to check any of the others. This is very efficient, and results in an O(n) speed!
 One downside to this system is that our set still takes up 8 spaces of data, even though we only have 5 numbers stored. But this is a small trade-off when having to access those numbers thousands of times as quickly as possible.
 This might seem like small fries for a set only 8-spaces long, but what if we had a million numbers? Imagine having to look through a million boxes and checking each one, individually, to see if the object inside is the right one. Wouldn't it be much easier to know ahead of time which box the object would be in? 
 This sort of data storage makes looking through big numbers much faster. 
@@ -70,7 +70,7 @@ Awesome, now we know why we use sets! However, we've only looked at small number
 
 ## Hashing
 
-Very rarely will you be working with data that fits so neatly together. Our examples so far have only covered `int`s. Strings can be sorted into sets by something called `serialization`. This is just the process of turning a string into a big number. For example, the word "cat" would be turned into the number 154282074. That can then be put into into storage like we did before. However, in order to store the word "cat," we would need at least 154282075 slots of storage in our set. That's a lot of space. That's why we use **hashing** to simplify. 
+Very rarely will you be working with data that fits so neatly together. Our examples so far have only covered `int`s. Strings can be sorted into sets by something called `serialization`. This is just the process of turning a string into a big number. For example, the word "cat" would be turned into the number 154282074. That can then be put into storage like we did before. However, in order to store the word "cat," we would need at least 154282075 slots of storage in our set. That's a lot of space. That's why we use **hashing** to simplify. 
 
 **Hashing** is a technique that allows data to be simplified and stored in a smaller chunk of data. 
 Imagine we're using the same 8-space data chunk, but we want to store the numbers 0, 11, 102, and 1004. 
@@ -82,7 +82,7 @@ The 0 fits nicely, but what about the other three numbers?
 We'd need a chunk of data that holds at least 1005 values in order to store them all as they are. 
 What if there was a simple way to store and access these numbers without having to take up so much storage?
 Let's try this: 
-What if we got remainder of these numbers after dividing them by 10? This can be done by using the Modulo opporator, or the `%`. This divides a number by another number and returns the remainder, or whatever couldn't be divided neatly after the division.
+What if we got the remainder of these numbers after dividing them by 10? This can be done by using the Modulo operator, or the `%`. This divides a number by another number and returns the remainder, or whatever couldn't be divided neatly after the division.
 0 % 10 is just 0
 11 % 10 is 1
 102 % 10 is 2
@@ -96,7 +96,7 @@ Now our data looks like this:
 |--------|----|----|----|----|----|----|----|----|
 | Values | 0  | 11 | 102|    |1004|    |    |    |
 
-(NOTE: You might notice we don't have a spot for numbers that end in 8 or 9. Realistically, you'd want to divide the number by the number of slots in storage. For example, if you have 8 slots like we have here, you would divide the number by 8. If you have 64 slots, you would divide by 64. However, for this example, we're simplyfing by dividing by 10 so you can easily see what slots the values would fit into.)
+(NOTE: You might notice we don't have a spot for numbers that end in 8 or 9. Realistically, you'd want to divide the number by the number of slots in storage. For example, if you have 8 slots like we have here, you would divide the number by 8. If you have 64 slots, you would divide by 64. However, for this example, we're simplifying by dividing by 10 so you can easily see what slots the values would fit into.)
 
 Now, let's try finding our values. 
 Let's look for 102. 
@@ -142,7 +142,7 @@ For example, let's go back to our set before we had conflicts:
 | Values | 0  | 11 | 102|    |1004|    |    |    |
 
 We want to add the value 14. We know 14 goes in spot 4, so we look in that cell and find 1004. Unfortunately, that means we can't stick 14 in there. 
-But we can put something else in the box that substitutes for 14 and 1004. This 'something else' is like a forwarding address that tells spot 4 to send all inqueries to a new location. We do this because we can't fit a full list in box 4, but we can still send our program to the right location where it can find everything that belongs at index 4. 
+But we can put something else in the box that substitutes for 14 and 1004. This 'something else' is like a forwarding address that tells spot 4 to send all inquiries to a new location. We do this because we can't fit a full list in box 4, but we can still send our program to the right location where it can find everything that belongs at index 4. 
 
 Our storage might look something like this. 
 | Index  | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
@@ -210,7 +210,7 @@ Now, we're going to add a method in our class to add pets.
     }
 ```
 
-This method will attempt to add the pet and, if successful (i.e. that pet isn't already in the list), will let the user know the pet has been added. Since the `Add` method returns true if the pet is added and false if the pet is already in the set, we just added a boolian variable to grab the true/false that was returned by the `Add` method. However, you can use `Add` without a variable grabbing the true/false return. 
+This method will attempt to add the pet and, if successful (i.e. that pet isn't already in the list), will let the user know the pet has been added. Since the `Add` method returns true if the pet is added and false if the pet is already in the set, we just added a boolean variable to grab the true/false that was returned by the `Add` method. However, you can use `Add` without a variable grabbing the true/false return. 
 
 Let's make a similar method to remove a pet. 
 
@@ -226,7 +226,7 @@ Let's make a similar method to remove a pet.
     }
 ```
 
-This method removes a pet and let's the user know, just like in our `AddPet` method. 
+This method removes a pet and lets the user know, just like in our `AddPet` method. 
 
 Let's try calling these methods! 
 
@@ -315,4 +315,28 @@ Now you get to give it a try.
 Let's make something else for our breakfast restaurant. 
 At Breakfast Rush, we offer lots of cereals. We want an easy way to update our cereal stock and check what's available. 
 You're provided some simple code with empty methods for each of them.
-Update the following methods to: 
+You can find the practice problem [here](SetsExample\Program.cs) and the solution to the practice [here](test-project\Program.cs).
+
+Try to complete the example problem on your own before looking through the solution.
+
+When you're done, you should be able to run the program and get, roughly, these results in the terminal: 
+```
+Sail'r Crunch is now in stock.
+Choco Puffs is now in stock.
+Happy O's is now in stock.
+Honey Clumps of Oats is now in stock.
+Frosted Chips is now in stock.
+
+There are 5 cereal(s) in stock!
+
+Honey Clumps of Oats is in stock!
+Honey Clumps of Oats is not longer in stock.
+Honey Clumps of Oats is not in stock.
+
+The following cereals are in stock:
+Sail'r Crunch
+Choco Puffs
+Happy O's
+Frosted Chips
+There are 4 cereal(s) in stock!
+```
