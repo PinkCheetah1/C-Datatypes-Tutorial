@@ -333,7 +333,7 @@ Now you get to give it a try.
 Let's make something else for our breakfast restaurant. 
 At Breakfast Rush, we offer lots of cereals. We want an easy way to update our cereal stock and check what's available. 
 You're provided some simple code with empty methods for each of them.
-You can find the practice problem [here](SetsExample\Program.cs) and the solution to the practice [here](test-project\Program.cs).
+You can find the practice problem [here](SetsExample\Program.cs) and the solution to the practice [here](SetsExampleSolution\Program.cs).
 
 Try to complete the example problem on your own before looking through the solution.
 
