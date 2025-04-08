@@ -19,7 +19,7 @@
 * Using a Set
 * Efficiency of common operations
 * Example Problem
-* Problem to Solve - Ingredient Lists
+* Problem to Solve - Cereal Brands
 ## IV. Tree
 * Introduction
 * Why use a tree? 
