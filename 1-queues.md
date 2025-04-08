@@ -16,23 +16,23 @@ When working with queues, we have a **Head** and a **Tail**.
 
 The **Head** is the item at the front of the list. When accessing a task in a Queue, you are accessing the head. 
 
-| Index  | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
+|        | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
 |--------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Values | 0  |  1 |  2 |    |    |    |    |    |
 |        |Head|    |    |    |    |    |    |    |
 
-(Small note: Queues don't use index like arrays do, but using an index to indicate where the items are in storage can be helpful for understanding how queues manage items. Just know that you'll never be referencing items with indexes.)
+(Small note: Queues don't use index like arrays do, but using an index to indicate where the items are in storage can be helpful for understanding how queues manage items, which is why they are here in the tables. Just know that you'll never be referencing items with indexes.)
 
 The **Tail** is the item at the back of the list. When you add an item to a queue, or **Enqueue,** you are always adding it to the back and it becomes the new tail. 
 
-| Index  | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
+|        | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
 |--------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Values | 0  |  1 |  2 |    |    |    |    |    |
 |        |Head|    |Tail|    |    |    |    |    |
 
 Adding to the queue: 
 
-| Index  | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
+|        | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
 |--------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Values | 0  |  1 |  2 | 3  |    |    |    |    |
 |        |Head|    |    |Tail|    |    |    |    |
@@ -45,21 +45,21 @@ Now, might be wondering, how do we access the rest of the items in the list if w
 
 In queues, in order to access a new item, you have to remove the one at the head. This is called **Dequeuing**. It would look something like this: 
 
-| Index  | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
+|        | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
 |--------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Values |~~-0-~~|  1 |  2 | 3  |    |    |    |    |
 |        |Head|    |    |Tail|    |    |    |    |
 
 Now, with value 0 gone, we move the head so that it's connected to the item at the front. 
 
-| Index  | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
+|        | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
 |--------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Values |    |  1 |  2 | 3  |    |    |    |    |
 |        |    |Head|    |Tail|    |    |    |    |
 
 We can keep going until we are all out of values. When we have something like this: 
 
-| Index  | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
+|        | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
 |--------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Values |    |    |    | 3  |    |    |    |    |
 |        |    |    |    |Head/Tail|    |    |    |    |
@@ -105,7 +105,7 @@ myQueue.Enqueue(4);
 ```
 
 Right now, our list looks like this: 
-| Index  | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
+|        | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
 |--------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Values | 1  |  2 |  3 | 4  |    |    |    |    |
 |        |Head|    |    |Tail|    |    |    |    |
@@ -118,7 +118,7 @@ myQueue.Dequeue();
 
 Now our queue looks like this: 
 
-| Index  | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
+|        | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
 |--------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Values |    |  2 |  3 | 4  |    |    |    |    |
 |        |    |Head|    |Tail|    |    |    |    |
@@ -131,7 +131,7 @@ int item = myQueue.Dequeue();
 
 Now, `item` will hold the number 2, and our queue will look like this: 
 
-| Index  | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
+|        | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7  |
 |--------|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | Values |    |    |  3 | 4  |    |    |    |    |
 |        |    |    |Head|Tail|    |    |    |    |
