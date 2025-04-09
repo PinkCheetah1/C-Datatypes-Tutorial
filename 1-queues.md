@@ -244,3 +244,4 @@ You added 20 pancakes. You now have 23 ready to serve.
 Served Tyler 15 pancakes!
 There are 0 orders left to fulfill.
 ```
+Return to [Home](0-welcome.md)

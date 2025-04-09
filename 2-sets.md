@@ -358,3 +358,5 @@ Happy O's
 Frosted Chips
 There are 4 cereal(s) in stock!
 ```
+
+Return to [Home](0-welcome.md)
