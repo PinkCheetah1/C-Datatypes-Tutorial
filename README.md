@@ -14,3 +14,4 @@ To get started, go [here](0-welcome.md)!
 ## Future Work
 * Diagrams for more complicated concepts in Sets and Queues
 * Additional resources for users
+* Fix Example Problem links to work on GitHub
